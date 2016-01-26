@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="resumeSite">
+    <head>
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/akr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,200,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/akr.css">
+    </head>
+    <body scroll data-spy="scroll" data-target=".navbar" data-offset="10" ng-controller="resumeCtrl">
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top" ng-class="{navMove:boolScroll, navTop: !boolScroll}">
+              <div class="container-fluid">
+                <ul class="nav navbar-nav menu">
+                    <li ng-repeat="n in navigation"><a href="{{n.location}}" ng-click="scrollTo(n.location, $event)">{{n.name}}</a></li>
+                </ul>
+              </div>
+            </nav>
+        </header>
+        <div id="homeSec">
+            <div class="row">
+                <div class="col-md-7" id="dp">
+                    <div class="shadowInset" id="dpImg" style="background-image:url({{demographics.image}});"></div>
+                </div>
+                <div id="vCard" class="col-md-4">
+                    <p>{{demographics.name}}</p>
+                    <p>Full stack web and software developer</p><br>
+                    <div class="button-blur" ng-click="scrollTo('#aboutSec')">KNOW MORE</div>
+                </div>
+            </div>
+            <div class="row quote">
+                <p>"Live as if you were to die tomorrow. Learn as if you were to live forever."</p>
+                <p><i>- Mahatma Gandhi</i></p>
+            </div>
+        </div>
+        
+        <div class="sec" id="aboutSec">
+            <div>
+                <div><p class="title">ABOUT ME</p></div>
+                <section id="aboutContent">
+                    <p>{{demographics.summary}}</p>
+                    <div id="demographics" class="row">
+                        <div class="col-md-4 border-plain" ng-class="{attach:boolFix}">
+                            <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&emsp;{{demographics.name}}</p>
+                            <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&emsp;<a href="mailto:{{demographics.email}}">{{demographics.email}}</a></p>
+                            <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&emsp;{{demographics.phone}}</p>
+                            <p><img width="20px" height="18px;" src="images/LinkedIn.png">&emsp;<a href="https://www.linkedin.com/in/akshay-krishna-r-ba73a289" target="_blank">LinkedIn</a></p>
+                            <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&emsp;{{demographics.address}}</p>
+                        </div>
+                        <div class="col-md-6">
+                           <h2>Hello,</h2> 
+                            <p>
+                                I'm Akshay, a full stack web and software developer based in Texas. Thank you for taking your time to visit. I specialize in building beautiful web applications and structured software. I love to code and design. To learn more about my skills and expertise, please scroll through.                </p>
+                            <a class="button-plain" href="pdf/AkshayRadhakrishna_CV.pdf" target="_blank">
+                                DOWNLOAD RESUME
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+            
+        <div class="sec" id="eduSec">
+            <div>
+                <div><p class="title">EDUCATION</p></div>
+                <section>
+                    <div class="row" ng-repeat="e in education">
+                        <div class="col-md-6">
+                            <p><b>{{e.degreeName}}</b></p>
+                            <p>{{e.university}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>{{e.from}}&nbsp;-&nbsp;{{e.to}}</p>
+                            <p>CGPA:&nbsp;{{e.gpa}}/4</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <div class="sec" id="expSec">
+            <div>
+                <div><p class="title">WORK EXPERIENCE</p></div>
+                <div class="experience" ng-repeat="exp in experience">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p><b>{{exp.companyName}}</b></p>
+                            <p>{{exp.position}}</p>
+                        </div>
+                        <div class="col-md-3">
+                            {{exp.from}}&nbsp;-&nbsp;{{exp.to}}&nbsp;&nbsp;
+                            <button class="btn btn-info" data-toggle="collapse" data-target="#exp{{exp.id}}">+</button>
+                        </div>
+                    </div>
+                    <div id="exp{{exp.id}}" class="collapse">
+                        <section class="expDesc">{{exp.desc}}</section>
+                        <br>
+                        <p ng-show="exp.link || exp.projLink"><a href={{exp.link}} target="_blank">View Website</a>&nbsp;&nbsp;<a ng-show="exp.projLink" href={{exp.projLink}} target="_blank">View project</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sec" id="skillSec">
+            <div>
+                <div><p class="title">SKILLS</p></div>
+            
+                <div class="row category" ng-repeat="category in skillCategory">
+                    <p><b>{{category}}</b></p>
+                    <div class="row">
+                        <div class="col-md-4" ng-repeat="prof in proficiency">
+                            <div class="prof">
+                                <p>{{prof}}</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-class="{'beginnerProgress':prof == 'Beginner', 'intermediateProgress':prof == 'Intermediate', 'advancedProgress':prof == 'Advanced' }"></div>
+                                </div>
+                            </div>
+                            <div class="skill shadow" ng-repeat="skill in skillSet" ng-if="skill.category == category && skill.prof == prof" title="Experience: {{skill.yrs}}">
+                                {{skill.name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sec" id="projSec">
+            <div>
+                <div><p class="title">PROJECTS</p></div>
+                <div class="projectCategory" ng-repeat="category in projCategory track by $index">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <b>{{category}}</b>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-info" data-toggle="collapse" data-target="#category{{$index+1}}">+</button>
+                        </div>
+                    </div>
+                    <div id="category{{$index+1}}" class="collapse">
+                        <div class="project" ng-repeat="project in projects" ng-if="project.category == category">
+                            <p><b>{{project.title}}</b> <i ng-show="project.where">at {{project.where}}</i></p>
+                            <p>{{project.desc}}</p>
+                            <p><i>Technologies used: </i>{{project.technologies}}</p>
+                            <p ng-show="project.link||project.git"><a ng-show="project.link" href="{{project.link}}" target="_blank">View Website</a>&nbsp;&nbsp;&nbsp;<a ng-show="project.git" href="{{project.git}}" target="_blank">View Git repo</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sec" id="miscSec">
+            <div>
+                <div><p class="title">PORTFOLIO</p></div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#websiteGal">Websites</a></li>
+                    <li><a data-toggle="tab" href="#photoshopGal">Photoshop</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="websiteGal" class="tab-pane fade in active">
+                        <div class="websiteImg" ng-repeat="p in portfolio">
+                            <a href="{{p.link}}" target="_blank"><img src={{p.img}}><l>{{p.name}}</l></a>
+                        </div>
+                    </div>
+                    <div id="photoshopGal" class="tab-pane fade">
+                        <div class="photoshopImg" ng-repeat="p in photoshop">
+                            <a ng-click="showModal(p.img)"><img src={{p.img}}></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="" data-toggle="modal" data-target=".modal" id="myModalShower"></a>
+        <div class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Photoshop</h4>
+              </div>
+              <div class="modal-body">
+                <img width="100%" src={{photoshopActive}}>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </body>
+</html>
