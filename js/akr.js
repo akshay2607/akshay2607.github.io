@@ -145,7 +145,9 @@
             
             var proj12 = new proj("My Portfolio website",null, "HTML5, CSS3, Javascript, Angular JS, Bootstrap", projCategory[0], "");
             proj12.desc = "My resume website that exemplifies my skill sets, work experience and expertise";
-            
+            proj12.link = "http://www.akshayradhakrishna.com";
+            proj12.git = "https://github.com/akshay2607/akshay2607.github.io";
+        
             var proj2 = new proj("HR Interview processing web application", "Polycom Inc", "Node.js, Socket.io, WebRTC, HTML5, CSS3, jQuery, Bootstrap", projCategory[1], "pdf/project_HR.pdf");
             proj2.desc = exp2.desc;
             
@@ -198,7 +200,7 @@
             };
             
             var portfolio = [];
-            portfolio.push(new portf("images/screenshot/resume.jpg", "My Resume", ""));
+            portfolio.push(new portf("images/screenshot/resume.jpg", "My Resume", "http://www.akshayradhakrishna.com"));
             portfolio.push(new portf("images/screenshot/chatroom.jpg", "Multiroom chat application", "http://52.26.21.178:2222/"));
             portfolio.push(new portf("images/screenshot/conf.png", "HR Interview Processing", "pdf/project_HR.pdf"));
             portfolio.push(new portf("images/screenshot/health.jpg", "Healthcare diagnosis", "http://52.26.21.178:3333/"));
