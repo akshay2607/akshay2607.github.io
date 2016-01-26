@@ -249,12 +249,12 @@ body{
 }
 .skill:hover{
     background: #00ADED;
-    cursor: pointer;
     color: #FFFFFF;
 }
 
 .expDesc{
     color: #B2B2B2;
+    font-size: 14px;
     white-space: pre;
 }
 
