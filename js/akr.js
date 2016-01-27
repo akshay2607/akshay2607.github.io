@@ -100,7 +100,7 @@
             
             /* Programming Languages */
             skillSet.push(new skill("Node.js","1.5 Years", proficiency[0], skillCategory[0]));
-            skillSet.push(new skill("C#","3 Years", proficiency[0], skillCategory[1]));
+            skillSet.push(new skill("C#","3 Years", proficiency[1], skillCategory[0]));
             skillSet.push(new skill("C++","1 Year", proficiency[1], skillCategory[0]));
             skillSet.push(new skill("PHP","1 Year", proficiency[1], skillCategory[0]));
             
