@@ -100,7 +100,7 @@
             
             /* Programming Languages */
             skillSet.push(new skill("Node.js","1.5 Years", proficiency[0], skillCategory[0]));
-            skillSet.push(new skill("C#","3 Years", proficiency[0], skillCategory[0]));
+            skillSet.push(new skill("C#","3 Years", proficiency[0], skillCategory[1]));
             skillSet.push(new skill("C++","1 Year", proficiency[1], skillCategory[0]));
             skillSet.push(new skill("PHP","1 Year", proficiency[1], skillCategory[0]));
             
@@ -113,7 +113,7 @@
             skillSet.push(new skill("Hadoop","4 months", proficiency[2], skillCategory[2]));
             
             /* Tools and Framework */
-            skillSet.push(new skill("ASP.NET","2.5 years", proficiency[0], skillCategory[3]));
+            skillSet.push(new skill("ASP.NET","2 years", proficiency[1], skillCategory[3]));
             skillSet.push(new skill("Sitecore CMS","5 months", proficiency[2], skillCategory[3]));
             skillSet.push(new skill("Jira","5 months", proficiency[2], skillCategory[3]));
             skillSet.push(new skill("BitBucket","5 months", proficiency[2], skillCategory[3]));
