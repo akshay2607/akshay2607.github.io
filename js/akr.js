@@ -26,7 +26,7 @@
             $scope.navigation = nav;
             $scope.demographics = {
                 name: "Akshay Krishna Radhakrishna",
-                address: "Austin, Texas",
+                address: "Arlington, Texas",
                 email: "akshay.radhakrishna@gmail.com",
                 phone: "+1 469-313-4120",
                 image: "images/myphoto.jpg",
