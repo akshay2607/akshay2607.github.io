@@ -96,13 +96,13 @@ body{
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background-position: center;
+    /*background-position: center;*/
     background-size: cover;
     background-repeat: no-repeat;
-    transform: rotate(10deg) translate(-50%,-50%);
-    -ms-transform: rotate(10deg) translate(-50%,-50%);
-    -webkit-transform: rotate(10deg) translate(-50%,-50%);
-    margin-top: 50vh;
+    transform: rotate(-10deg) translate(-50%,-50%);
+    -ms-transform: rotate(-10deg) translate(-50%,-50%);
+    -webkit-transform: rotate(-10deg) translate(-50%,-50%);
+    margin-top: 45vh;
     float: right;
 }
 
@@ -302,12 +302,12 @@ body{
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        background-position: center;
+        /*background-position: center;*/
         background-size: cover;
         background-repeat: no-repeat;
-        transform: rotate(10deg) translate(-50%,-50%);
-        -ms-transform: rotate(10deg) translate(-50%,-50%);
-        -webkit-transform: rotate(10deg) translate(-50%,-50%);
+        transform: rotate(-10deg) translate(-50%,-50%);
+        -ms-transform: rotate(-10deg) translate(-50%,-50%);
+        -webkit-transform: rotate(-10deg) translate(-50%,-50%);
         margin-top: 50vh;
         margin-left: 50%;
         float: none;

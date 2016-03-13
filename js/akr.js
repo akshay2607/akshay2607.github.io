@@ -29,7 +29,7 @@
                 address: "Arlington, Texas",
                 email: "akshay.radhakrishna@gmail.com",
                 phone: "+1 469-313-4120",
-                image: "images/myphoto.jpg",
+                image: "images/mypic.jpg",
                 summary: "Self-motivated Masters graduate in computer science with 3+ years of work experience in Web Application and Software development."
             };
             
